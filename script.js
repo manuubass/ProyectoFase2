@@ -142,12 +142,7 @@ function ocultarCarrito() {
     document.getElementById('carritoModal').style.display = 'none';
 }
 
-function eliminarProducto(index) {
-    total -= carrito[index].precio;
-    carrito.splice(index, 1);
-    actualizarCarrito();
-    mostrarCarrito();
-}
+
 
 function vaciarCarrito() {
     carrito = [];
@@ -156,34 +151,6 @@ function vaciarCarrito() {
     document.getElementById('productosCarrito').innerHTML = '';
     document.getElementById('totalPrecio').innerText = 'Total: \$0.00';
 }
-
-function buscarProducto() {
-    const buscador = document.getElementById('buscador');
-    const terminoBusqueda = buscador.value.toLowerCase();
-
-    // Buscar el producto en el catálogo
-    const productoEncontrado = catalogo.find(producto => 
-        producto.nombre.toLowerCase().includes(terminoBusqueda)
-    );
-
-    // Si se encuentra el producto, redirigir a la página del producto
-    if (productoEncontrado) {
-        window.location.href = productoEncontrado.url;
-    }
-}
-const productos = {
-    "AIRPODS MAX": {
-        nombre: "AIRPODS MAX",
-        descripcion: "Auriculares de alta fidelidad.",
-        precio: 549.00,
-        imagen: "img/airpodsmax.webp"
-    },
-    "CUBBIT WATCH": {
-        nombre: "CUBBIT WATCH",
-        descripcion: "Reloj inteligente con múltiples funciones.",
-        precio: 299.00,
-        imagen: "img/cubbitwatch.webp"
-    }}
 
 function pagar(){
     window.location.href = 'pagar.html';

@@ -2,7 +2,7 @@ let usuarioAutenticado = false;
 let carrito=[];
 let total=0;
 let indiceImagen = 0;
-const totalImagenes = document.querySelectorAll('.carrusel-contenido img').length / 2; // Dividir por 2 por las imágenes duplicadas
+const totalImagenes = document.querySelectorAll('.carrusel-contenido img').length / 2; 
 const catalogo = [
     { nombre: "AIRPODS MAX", url: "producto.html" },
     { nombre: "CUBBIT WATCH ", url: "producto.html" },
@@ -17,18 +17,17 @@ const catalogo = [
     { nombre: "FIRE STICK 4K", url: "producto.html" },
     { nombre: "NINTENDO SWITCH 2", url: "producto.html" },
     
-    
 ];
 
 function mostrarImagen(indice) {
     if (indice >= totalImagenes) {
-        indiceImagen = 0; // Reiniciar al inicio
+        indiceImagen = 0; // Reiniciar 
     } else if (indice < 0) {
         indiceImagen = totalImagenes - 1; // Ir a la última imagen
     } else {
         indiceImagen = indice;
     }
-    const desplazamiento = -indiceImagen * 100; // Cambia el desplazamiento según el índice
+    const desplazamiento = -indiceImagen * 100; 
     document.querySelector('.carrusel-contenido').style.transform = `translateX(${desplazamiento}%)`;
 }
 
@@ -36,22 +35,13 @@ function cambiarImagen(direccion) {
     mostrarImagen(indiceImagen + direccion);
 }
 
-// Mover automáticamente el carrusel cada 3 segundos
+// Mover 3 segundos
 setInterval(() => {
-    cambiarImagen(1); // Cambia a la siguiente imagen
-}, 3000); // 3000 milisegundos = 3 segundos
+    cambiarImagen(1); 
+}, 3000); 
 
 // Mostrar la primera imagen al cargar
 mostrarImagen(indiceImagen);
-
-// Agregar evento de clic a las imágenes
-const imagenes = document.querySelectorAll('.carrusel-contenido img');
-imagenes.forEach(imagen => {
-    imagen.addEventListener('click', () => {
-        const url = imagen.getAttribute('data-url'); // Obtener la URL del atributo data-url
-        window.location.href = 'producto.html'; // 
-    });
-});
 
  function login() {
     const correo = document.getElementById('correo').value;
@@ -70,13 +60,13 @@ imagenes.forEach(imagen => {
         // Redirigir según el tipo de cuenta
         switch (cuentas[correo].tipo) {
             case 'Comprador':
-                window.location.href = 'comprador.html'; // Página del comprador
+                window.location.href = 'catalogo.html'; 
                 break;
             case 'Vendedor':
-                window.location.href = 'vendedor.html'; // Página del vendedor
+                window.location.href = 'formulariovendedor.html'; 
                 break;
             case 'Admin':
-                window.location.href = 'admin.html'; // Página del administrador
+                window.location.href = 'control.html';
                 break;
         }
     } else {
@@ -104,11 +94,8 @@ function registro() {
         alert("Las contraseñas no coinciden. Inténtalo de nuevo.");
         return; // Salir de la función si las contraseñas no coinciden
     }
-
-    // Si todo está bien, puedes proceder con el registro
     alert("Registro exitoso!");
-    window.location.href = 'login.html'; // Página del comprador
-    // Aquí podrías agregar el código para enviar el formulario o realizar otra acción
+    window.location.href = 'login.html'; //que inicie sesion
 }
 function agregarCarrito(nombre, precio) {
     carrito.push({ nombre, precio });
@@ -119,7 +106,6 @@ function agregarCarrito(nombre, precio) {
 function actualizarCarrito() {
     document.getElementById('numeroCarrito').innerText = `🛒 ${carrito.length}`;
 }
-
 function mostrarCarrito() {
     const carritoModal = document.getElementById('carritoModal');
     const productosCarrito = document.getElementById('productosCarrito');
@@ -142,8 +128,6 @@ function ocultarCarrito() {
     document.getElementById('carritoModal').style.display = 'none';
 }
 
-
-
 function vaciarCarrito() {
     carrito = [];
     total = 0;
@@ -151,17 +135,25 @@ function vaciarCarrito() {
     document.getElementById('productosCarrito').innerHTML = '';
     document.getElementById('totalPrecio').innerText = 'Total: \$0.00';
 }
-
-function pagar(){
-    window.location.href = 'pagar.html';
-    
-}
 function validarVendedor(usuario, contrasena) {
     const vendedor = {
         nombre: "dancabello",
         contrasena: "J5*asdRD.s"
     };
+    // Verificar si el usuario y la contraseña son correctos
+    if (usuario === vendedor.nombre && contrasena === vendedor.contrasena) {
 
+        return true; // Validación exitosa
+    } else {
+        alert("Usuario o contraseña incorrectos.");
+        return false; // Validación fallida
+    }
+}
+function validarComprador(usuario, contrasena) {
+    const Comprador = {
+        nombre: "seller456",
+        contrasena: "Intro123"
+    };
     // Verificar si el usuario y la contraseña son correctos
     if (usuario === vendedor.nombre && contrasena === vendedor.contrasena) {
         return true; // Validación exitosa
@@ -169,6 +161,16 @@ function validarVendedor(usuario, contrasena) {
         alert("Usuario o contraseña incorrectos.");
         return false; // Validación fallida
     }
+}
+function pagar(){
+    window.location.href = 'pagar.html';
+    validarComprador(usuario,contrasena)
+   let totalpagar=document.getElementById('totalPrecio').innerText = 'Total: \$0.00';
+}
+function borrar()
+{
+
+
 }
 
 

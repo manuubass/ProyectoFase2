@@ -19,6 +19,9 @@ body {
     box-shadow: 5px 10px 15px #000;
 
 }
+.botonR{
+    background-color: red;
+}
 .form_register h3 {
     font-size: 22px;
     margin-bottom: 20px;  

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BINARYSHOP</title>
+</head>
+<body>
+    
+        <header>
+            <h1 id="titulo"><a href="#">Tienda BINARYSHOP</a></h1>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalogo.html">Catalogo</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="registro.html">Registrarse</a></li>
+                    <li><a href="formulariovendedor.html">PUBLICAR PRODUCTO</a></li>
+
+                    <li><a href="#"><input type="search" name="buscador" placeholder="Buscar Producto:" id="buscador"></a></li>
+                </ul>
+            </nav>
+            <div class="carrusel">
+                <div class="carrusel-contenido">
+                    <img src="img/oculus.jpg" alt="Producto1" data-url="descripcion1">
+                    <img src="img/airpodsmax.webp" alt="Producto2" data-url="descripcion2">
+                    <img src="img/cubbitwatch.webp" alt="Producto3" data-url="descripcion3">
+                    <img src="img/jblcharge5.jpg" alt="Producto4" data-url="descripcion4">
+                    <img src="img/81sq-a+suJL.jpg" alt="Producto5" data-url="descripcion5">
+                    <!-- reiniciar-->
+                    <img src="img/tv.webp" alt="Producto6" data-url="descripcion1" id="reiniciar">
+                </div>
+                <button class="prev" onclick="cambiarImagen(-1)">&#10094;</button>
+                <button class="next" onclick="cambiarImagen(1)">&#10095;</button>
+            </div>
+        </header>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Detalles del Producto</title>
+
+</head>
+<body>
+    <header>
+        <h1 id="titulo"><a href="./index.html">Tienda BINARYSHOP</a></h1>
+    </header>
+    </head>
+    <body>
+        <div class="producto">
+            <h1 id="nombreProducto"></h1>
+            <img id="imagenProducto" src="" alt="Imagen del producto">
+            <p id="precioProducto"></p></div>
+            <input class="boton" type="button" value="Comprar" onclick="pagar()">
+            <input class="boton" type="button" value="Agregar Carrito" onclick="agregarCarrito()">
+        <div id="carrito" onmouseover="mostrarCarrito()" onmouseout="ocultarCarrito()">
+                <span id="numeroCarrito">🛒 0</span> artículos
+                <div id="carritoModal" style="display:none;">
+                    <div id="productosCarrito"></div>
+                    <p id="totalPrecio">Total: \$0.00</p>
+                    <input type="button" class="botonCarrito" value="Vaciar Carrito" onclick="vaciarCarrito()"></input>
+                    <input type="button" class="botonCarrito"  onclick="pagar()" value="Ir a pagar"></input>
+                </div>
+            </div>
+    
+        <script>
+            
+            function getQueryParams() {
+                const params = {};
+                const queryString = window.location.search.substring(1);
+                const regex = /([^&=]+)=([^&]*)/g;
+                let m;
+                while (m = regex.exec(queryString)) {
+                    params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+                }
+                return params;
+            }
+    
+            // Display product details
+            const params = getQueryParams();
+            document.getElementById('nombreProducto').innerText = params.producto || 'Producto no encontrado';
+            document.getElementById('imagenProducto').src = params.imagen || '';
+            document.getElementById('precioProducto').innerText = `$${params.precio || '0.00'}`;
+        </script>
+</body>
+</html>

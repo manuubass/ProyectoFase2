@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Registro</title>
+</head>
+<body>
+    <h1 id="titulo"> <a href="index.html">TIENDA BINARYSHOP</a></h1>
+    <section class="form_register">
+        <h3>Formulario Registro</h3>
+        <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre: ">
+        <input class="controls" type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido: ">
+        <input class="controls" type="text" name="nickname" id="nickname" placeholder="Ingrese su nickname: ">
+         <select id="rol" class="controls">
+            <option value="comprador">Comprador</option>
+            <option value="vendedor">Vendedor</option>
+        </select>
+        <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su correo electronico: ">
+        <input class="controls" type="password" name="password1" id="password1" placeholder="Ingrese su password: ">
+        <input class="controls" type="password" name="password2" id="password2" placeholder="Ingrese nuevamente su password: ">
+        <input class="botons" type="submit" value="Registro" onclick="registro()">
+        <p><a href="login.html">Ya tengo cuenta</a></p>
+    </section>
+
+<script src="script.js"></script>
+</body>
+</html>

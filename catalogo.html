@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Catalogo</title>
+</head>
+<body>
+    <h1 id="titulo"><a href="index.html">Tienda BINARYSHOP</a></h1>
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Catalogo</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="registro.html">Registrarse</a></li>
+            <li><a href="formulariovendedor.html">PUBLICAR PRODUCTO</a></li>
+
+            <li><a href="#"><input type="search" name="buscador" placeholder="Buscar Producto:" id="buscador" oninput="buscarProducto()"></a></li>
+
+        </ul>
+    </nav>
+    <div class="catalogo">
+        <div class="caja" id="id1">
+            <img src="img/airpodsmax.webp" alt="Apple AirPods Max">
+            <p><a href="producto.html?producto=AIRPODS%20MAX&precio=549&imagen=img/airpodsmax.webp">AIRPODS MAX</a></p>
+            <p class="precio">$549.00</p>
+            <a href="pagar.html"><input class="boton" type="button" value="Comprar" onclick="pagar()"></a>
+            <input class="boton" type="button" value="Agregar Carrito" onclick="agregarCarrito('AIRPODS MAX', 549)">
+        </div>
+        <div class="caja" id="id2">
+            <img src="img/cubbitwatch.webp" alt="Cubbit Watch">
+            <p><a href="producto.html?producto=CUBBIT%20WATCH&precio=199&imagen=img/cubbitwatch.webp">CUBBIT WATCH</a></p>
+            <p class="precio">$199.00</p>
+            <a href="pagar.html"><input class="boton" type="button" value="Comprar" onclick="pagar()"></a>
+            <input class="boton" type="button" value="Agregar Carrito" onclick="agregarCarrito('CUBBIT WATCH', 199)">
+        </div>
+        <div class="caja" id="id3">
+            <img src="img/jblcharge5.jpg" alt="JBL Charger 5">
+            <p><a href="producto.html?producto=JBL%20CHARGER%205&precio=129&imagen=img/jblcharge5.jpg">JBL CHARGER 5</a></p>
+            <p class="precio">$129.00</p>
+            <a href="pagar.html"><input class="boton" type="button" value="Comprar" onclick="pagar()"></a>
+            <input class="boton" type="button" value="Agregar Carrito" onclick="agregarCarrito('JBL CHARGER 5', 129)">
+        </div>
+        <div class="caja" id="id4">
+            <img src="img/oculus.jpg" alt="Oculus">
+            <p><a href="producto.html?producto=OCULUS&precio=399&imagen=img/oculus.jpg">OCULUS</a></p>
+            <p class="precio">$399.00</p>
+            <a href="pagar.html"> <input class="boton" type="button" value="Comprar" onclick="pagar()"></a>
+            <input class="boton" type="button" value="Agregar Carrito" onclick="agregarCarrito('OCULUS', 399)">
+        </div>
+        <div class="caja" id="id5">
+            <img src="img/81sq-a+suJL.jpg" alt="Laptop Lenovo Ideapad 3">
+            <p><a href="producto.html?producto=LAPTOP%20LENOVO%20IDEAPAD%203&precio=699&imagen=img/81sq-a+suJL.jpg">LAPTOP LENOVO IDEAPAD 3</a></p>
+            <p class="precio">$699.00</p>
+            <a href="pagar.html">  <input class="boton" type="button" value="Comprar" onclick="pagar()"></a>
+            <input class="boton" type="button" value="Agregar Carrito" onclick="agregarCarrito('LAPTOP LENOVO IDEAPAD 3', 699)">
+        </div>
+        <div class="caja" id="id6">
+            <img src="img/tv.webp" alt="Samsung TV Crystal UHD">
+            <p><a href="producto.html?producto=SAMSUNG%20TV%20CRYSTAL%20UHD&precio=1200&imagen=img/tv.webp">SAMSUNG TV CRYSTAL UHD</a></p>
+            <p class="precio">$1200.00</p>
+            <a href="pagar.html"> <input class="boton" type="button" value="Comprar" onclick="pagar()"></a>
+            <input class="boton" type="button" value="Agregar Carrito" onclick="agregarCarrito('SAMSUNG TV CRYSTAL UHD', 1200)">
+        </div>
+        <div class="caja" id="id7">
+            <img src="img/PS5-PRO.webp" alt="PlayStation Pro 5">
+            <p><a href="producto.html?producto=PLAYSTATION%20PRO%205&precio=499&imagen=img/PS5-PRO.webp">PLAYSTATION PRO 5</a></p>
+            <p class="precio">$499.00</p>
+            <a href="pagar.html"> <input class="boton" type="button" value="Comprar" onclick="pagar()"></a>
+            <input class="boton" type="button" value="Agregar Carrito" onclick="agregarCarrito('PLAYSTATION PRO 5', 499)">
+        </div>
+        <div class="caja" id="id8">
+            <img src="img/ALEXA.jpeg" alt="Alexa Echo 5 Amazon">
+            <p><a href="producto.html?producto=ALEXA%20ECHO%205%20AMAZON&precio=130&imagen=img/ALEXA.jpeg">ALEXA ECHO 5 AMAZON</a></p>
+            <p class="precio">$130.00</p>
+            <a href="pagar.html">  <input class="boton" type="button" value="Comprar" onclick="pagar()"></a>
+            <input class="boton" type="button" value="Agregar Carrito" onclick="agregarCarrito('ALEXA ECHO 5 AMAZON', 130)">
+        </div>
+        <div class="caja" id="id9">
+            <img src="img/applewatch7.jpg" alt="Apple Watch Series 7">
+            <p><a href="producto.html?producto=APPLE%20WATCH%20SERIES%207&precio=500&imagen=img/applewatch7.jpg">APPLE WATCH SERIES 7</a></p>
+            <p class="precio">$500.00</p>
+            <a href="pagar.html"> <input class="boton" type="button" value="Comprar" onclick="pagar()"></a>
+            <input class="boton" type="button" value="Agregar Carrito" onclick="agregarCarrito('APPLE WATCH SERIES 7', 500)">
+        </div>
+        <div class="caja" id="id10">
+            <img src="img/iphone16.webp" alt="iPhone 16 Pro Max 256GB">
+            <p><a href="producto.html?producto=IPHONE%2016%20PRO%20MAX%20256GB&precio=1500&imagen=img/iphone16.webp">IPHONE 16 PRO MAX 256GB</a></p>
+            <p class="precio">$1500.00</p>
+            <a href="pagar.html"> <input class="boton" type="button" value="Comprar" onclick="pagar()"></a>
+            <input class="boton" type="button" value="Agregar Carrito" onclick="agregarCarrito('IPHONE 16 PRO MAX', 1500)">
+        </div>
+        <div class="caja" id="id11">
+            <img src="img/firestick.webp" alt="Fire Stick 4K">
+            <p><a href="producto.html?producto=FIRE%20STICK%204K&precio=54.98&imagen=img/firestick.webp">FIRE STICK 4K</a></p>
+            <p class="precio">$54.98</p>
+            <a href="pagar.html"><input class="boton" type="button" value="Comprar" onclick="pagar()"></a>
+            <input class="boton" type="button" value="Agregar Carrito" onclick="agregarCarrito('FIRE STICK 4K', 54.98)">
+        </div>
+        <div class="caja" id="id12">
+            <img src="img/nintendoswitch2.jpg" alt="Nintendo Switch 2">
+            <p><a href="producto.html?producto=NINTENDO%20SWITCH%202&precio=249.99&imagen=img/nintendoswitch2.jpg">NINTENDO SWITCH 2</a></p>
+            <p class="precio">$249.99</p>
+            <input class="boton" type="button" value="Comprar" onclick="pagar()">
+            <input class="boton" type="button" value="Agregar Carrito" onclick="agregarCarrito('NINTENDO SWITCH 2', 249.99)">
+        </div>
+    </div>
+   
+    <div id="carrito" onmouseover="mostrarCarrito()" onmouseout="ocultarCarrito()">
+        <span id="numeroCarrito">🛒 0</span> artículos
+        <div id="carritoModal" style="display:none;">
+            
+            <div id="productosCarrito"></div>
+            <p id="totalPrecio">Total: \$0.00</p>
+            <input type="button" class="botonCarrito" value="Vaciar Carrito" onclick="vaciarCarrito()"></input>
+            <input type="button" class="botonCarrito"  onclick="pagar()" value="Ir a pagar"></input>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
